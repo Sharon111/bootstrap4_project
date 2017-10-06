@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TicketBazaar | Events</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="masthead">
+        <h3 class="text-muted">TicketBazaar</h3>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav text-md-center nav-justified w-100">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                    <a class="nav-link" href="events.html">Events</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="tickets.html">Tickets</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html">Log In</a>
+                  </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Events</h1>
+        <p class="lead">You can find here the table of events.</p>
+        <p></p>
+      </div>
+
+      <div class="row events-search-row">
+          <div class="col-12">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+                </span>
+              </div>
+            </div>
+
+          </div>
+     
+      <!-- Card -->
+      <div class="card-deck events-card-deck">
+        <a href="tickets.html?event=1" class="card">
+            <img class="card-img-top" src="img/festival.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Festival</h4>
+              <p class="card-text">Come on to this festival.</p>
+              <p class="card-text"><small class="text-muted">2017-08-03</small></p>
+              <p><button class="btn btn-link float-right">View Details</button></p>
+            </div>
+          </a>
+          <a href="tickets.html?event=2" class="card">
+              <img class="card-img-top" src="img/ballet.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Ballet of Nutcracker</h4>
+                <p class="card-text">See this ballet.</p>
+                <p class="card-text"><small class="text-muted">2017-10-20</small></p>
+                <p><button class="btn btn-link float-right">View Details</button></p>
+              </div>
+            </a>
+          <a href="tickets.html?event=3" class="card">
+            <img class="card-img-top" src="img/musical.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Musical of Cats</h4>
+              <p class="card-text">This is a longer card .</p>
+              <p class="card-text"><small class="text-muted">2017-12-03</small></p>
+              <p><button class="btn btn-link float-right">View Details</button></p>
+            </div>
+          </a>
+        </div>
+
+    </div> <!-- /container -->
+
+    <div class="container footer-container">
+        <!-- Site footer -->
+          <footer class="footer">
+              <p>&copy; Company 2017</p>
+            </footer>
+      </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="lib\jquery-3.2.1.slim.min.js" ></script>
+    <script src="lib\popper.min.js"></script>
+    <script src="lib\bootstrap\js\bootstrap.min.js"></script>
+
+    <script>
+      $(".events-search-row input").on("keyup", function(ev) {
+      $.each( $(".events-card-deck .card .card-title"), function(i, e) {
+          var elem = $(e);  
+          var search = ev.target.value.toLowerCase();
+          var content = elem.html().toLowerCase();
+          if ( content.indexOf(search) == -1 ) {
+            elem.parents(".card").hide();
+          } else {
+            elem.parents(".card").show();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
